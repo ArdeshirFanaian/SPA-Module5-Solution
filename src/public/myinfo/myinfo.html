@@ -1,0 +1,37 @@
+<div class="container">
+  <fieldset ng-show="{{error}}">
+    <legend><h1>Welcome to My Info page</h1></legend>
+    <h2>Not Signed Up Yet!</h2>
+    <a ui-sref="public.signup"><h3>Sign Up Now!</h3></a>
+  </fieldset>
+  <fieldset ng-hide="{{error}}">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <legend><h1>Welcome to My Info page</h1></legend>
+          <h2>Hello {{user.firstname}}, </h2>
+          <h3>Here is your information:</h3>
+          <h4>First Name: {{user.firstname}}</h4>
+          <h4>Last Name: {{user.lastname}}</h4>
+          <h4>Email Address: {{user.email}}</h4>
+          <h4>Phone Number: {{user.phone}}</h4>
+        </div>
+        <div class="menu-item-tile col-sm-6">
+          <br><legend><h2>Your Favorite Menu Item</h2></legend>
+          <div class="col-sm-5">
+            <div class="menu-item-photo">
+              <img class="img-responsive" width="250" height="150"
+              ng-src="/images/menu/{{myInfoCtrl.favoriteMenuItem.category_short_name}}/{{myInfoCtrl.favoriteMenuItem.category_short_name}}.jpg"
+              alt="{{myInfoCtrl.favoriteMenuItem.name}}">
+            </div>
+          </div>
+          <div class="menu-item-description col-sm-7">
+            <h3 class="menu-item-title">{{myInfoCtrl.favoriteMenuItem.name}}</h3>
+            <p class="menu-item-details">{{myInfoCtrl.favoriteMenuItem.description}}</p>
+          </div>
+        </div>
+      </div>
+      <hr class="visible-xs">
+    </div>
+  </fieldset>
+</div>
